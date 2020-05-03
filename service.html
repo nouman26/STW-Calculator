@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- title-->
+      <title>STW Calculator</title>
+    <!----- favicon----->
+    <link rel="icon" href="" type="image/gif" sizes="16x16">
+    <!-- Style file of CSS -->
+    <link rel="stylesheet" type="text/css" href="Style files\css\servicestyle.css">
+    <link rel="stylesheet" href="Style files\css\navstyles service,contact,about.css" type="text/css">
+    <!-- Bootstrap JS Files-->
+   
+    <!-- Angular JS Files-->
+    <script src="Style files\js\angular.min.js"></script>
+    <script src="Style files\js\cus.js"></script>
+    <!-- Bootstrap CSS Files-->
+    <link rel="stylesheet" href="Style files\css\bootstrap-reboot.min.css" type="text/css">
+    <link rel="stylesheet" href="Style files\css\bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="Style files\css\bootstrap.min.css" type="text/css"> 
+    <!-- for goodle fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+    <body >
+    	<div class="stk"> <!------ For Navigation Bar Sticky----------------->
+        	<header class="headers">
+            <nav>
+                <div class="logo">
+                    <h2 style=" font-family: 'Great Vibes', cursive;">STW Calculator</h2>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <a href="index.html">Home</a>
+                        <a style="background-color: white; color: black!important; padding: 0% 2%; border-radius: 10px;" href="service.html">Services</a>
+                        <a href="aboutus.html">Aboutus</a>
+                        <a href="#Contact">Contact Us</a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section id="bkimg" class="body" style="background-image: url('conection.jpg');">
+            <div class="row">
+                <div id="calcu" class="col-md-6">
+                    <img src="Images\Scientific.png">
+                    <button id="cabtn">Calculator</button>
+                    <button id="cabk" style="background-color: red; border-color: white; color: white;">Back</button>
+                    <div id="camenu" class="cal">
+                    	<button id="ca1">Simple Calculator</button>
+                    	<button id="ca2">Area of Rectangle</button>
+                    	<button id="ca3">Area of Square</button>
+                    	<button id="ca4">Area of Circle</button>
+                    	<button id="bkCabtn" style="background-color: red; border-color: white; color: white;">Back</button>
+                    </div>
+        <section id="simp" class="simple">
+          <h3>SIMPLE CALCULATOR</h3>
+          <form name="calculator">
+            
+          <input type="text" name="answer" id="stext" />
+          <div>
+            <br>
+            <input type="button" value=" c " onclick="calculator.answer.value = ''" />
+            <input type="button" value=" ( " onclick="calculator.answer.value += '('" />
+            <input type="button" value=" ) " onclick="calculator.answer.value += ')'" />
+            <input type="button" value=" / " onclick="calculator.answer.value += '/'" />
+            <br/>
+            
+            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input type="button" value=" x " onclick="calculator.answer.value += '*'" />
+            </br>
+
+            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input type="button" value=" - " onclick="calculator.answer.value += '-'" />
+            </br>
+
+            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input type="button" value=" + " onclick="calculator.answer.value += '+'" />
+            <br/>
+            
+            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input type="button" value=" . " onclick="calculator.answer.value += '.'" />
+            <input type="button" value=" % " onclick="calculator.answer.value += '%'" />
+            <input type="button" value=" = " onclick="calculator.answer.value = eval(calculator.answer.value)" />
+            </br>
+  
+          </div>
+        </form>
+      </section>
+                <section id="aor" class="cnvt">
+      					    <h3>AREA OF RECTANGULAR</h3>
+      					    <label style="margin-top: 30px">Length:</label>
+  						      <input id="inputlr" type="number" placeholder="Length">
+  						      <label style="margin-top: 30px">Width:</label>
+  						      <input id="inputlw" type="number" placeholder="Width" oninput="aorConverter(this.value,)" onchange="aorConverter(this.value)">
+						        <p>Area of Rectangular: <span id="outputrarea"></span></p>
+     				    </section>
+
+         				<section id="aos" class="cnvt">
+          					<h3>AREA OF SQUARE</h3>
+          					<label style="margin-top: 30px">One Side of Square:</label>
+      						  <input id="inputss" type="number" placeholder="One Side of Square" oninput="aosConverter(this.value)" onchange="aosConverter(this.value)">
+    						    <p>Area of Square: <span id="outputsarea"></span></p>
+         				</section>
+
+       				  <section id="aoc" class="cnvt">
+        					  <h3>AREA OF CIRCLE</h3>
+        					  <label style="margin-top: 30px">Radius of Circle:</label>
+    						    <input id="inputcr" type="number" placeholder="Radius of Circle" oninput="aocConverter(this.value)" onchange="aocConverter(this.value)">
+    						   <p>Area of Circle: <span id="outputcarea"></span></p>
+       				 </section>
+        </div>
+
+            <div id="conve" class="col-md-6">
+                    <img style="margin-top: 25px; max-width: 177px;" src="Images\Weight.png">
+                    <button id="cobtn">Convertor</button>
+                    <div id="cnmenu" class="cal">
+                    	<button id="c1">Temperature</button>
+                    	<button id="c2">Weight</button>
+                    	<button id="bkCnbtn" style="background-color: red; border-color: white; color: white;">Back</button>
+                	  </div>
+                	  <div id="ct" class="temp">
+                		<h3>TEMPERATURE</h3>
+                		  <button id="t1">Faherenheit to Celcius</button>
+                    	<button id="t2">Celcius to Faherenheit</button>
+                    	<button id="t3">Faherenheit to Kelvin</button>
+                    	<button id="t4">Kelvin to Faherenheit</button>
+                    	<button id="t5">Celcius to Kelvin</button>
+                    	<button id="t6">Kelvin to Celcius</button>
+                    	<button id="ctbk" style="background-color: red; border-color: white; color: white;">Back</button>
+                	  </div>
+
+                	<div id="cw" class="cal">
+                		<h3>WEIGHT</h3>
+                		  <button id="w1">Kilogram to Gram</button>
+                    	<button id="w2">Gram to Kilogram</button>
+                    	<button id="w3">Kilogram to Pound</button>
+                    	<button id="w4">Pound to Kilogram</button>
+                    	<button id="cwbk" style="background-color: red; border-color: white; color: white;">Back</button>
+                	</div>
+              <div>
+                <section id="ftc" class="cnvt">
+      					  <h3>Faherenheit to Celcius</h3>
+      					  <label style="margin-top: 30px">Faherenheit</label>
+  						    <input id="inputfahcel" type="number" placeholder="Faherenheit" oninput="fcConverter(this.value)" onchange="fcConverter(this.value)">
+						      <p>Celcius: <span id="outputcel"></span></p>
+     					  </section>
+
+       					<section id="ctf" class="cnvt">
+        					<h3>Celcius to Faherenheit</h3>
+        					<label style="margin-top: 30px">Celcius</label>
+    						  <input id="inputcelfah" type="number" placeholder="Celcius" oninput="cfahConverter(this.value)" onchange="cfahConverter(this.value)">
+  						    <p>Faherenheit: <span id="outputfah"></span></p>
+       					</section>
+
+     					<section id="ftk" class="cnvt">
+      					<h3>Faherenheit to Kelvin</h3>
+      					<label style="margin-top: 30px">Faherenheit</label>
+  						  <input id="inputfahkel" type="number" placeholder="Faherenheit" oninput="fahkelConverter(this.value)" onchange="fahkelConverter(this.value)">
+						    <p>Kelvin: <span id="outputkel"></span></p>
+     					</section>
+
+     					<section id="ktf" class="cnvt">
+      					<h3>Kelvin to Faherenheit</h3>
+      					<label style="margin-top: 30px">Kelvin</label>
+  						  <input id="inputkelfah" type="number" placeholder="Kelvin" oninput="kelfahConverter(this.value)" onchange="kelfahConverter(this.value)">
+						    <p>Faherenheit: <span id="outputkfah"></span></p>
+     					</section>
+
+     					<section id="ctk" class="cnvt">
+      					<h3>Celcius to Kelvin</h3>
+      					<label style="margin-top: 30px">Celcius</label>
+  						  <input id="inputcelkel" type="number" placeholder="Celcius" oninput="celkelConverter(this.value)" onchange="celkelConverter(this.value)">
+						    <p>Kelvin: <span id="outputckel"></span></p>
+     					</section>
+
+     					<section id="ktc" class="cnvt">
+      					<h3>Kelvin to Celcius</h3>
+      					<label style="margin-top: 30px">Kelvin</label>
+  						  <input id="inputkelcel" type="number" placeholder="Kelvin" oninput="kelcelConverter(this.value)" onchange="kelcelConverter(this.value)">
+						    <p>Celcius: <span id="outputkcel"></span></p>
+     					</section>
+     					<button id="bktt" style="background-color: red; border-color: white; color: white;">Back</button>
+            </div>
+
+            <div>
+              <section id="ktg" class="cnvt">
+      					<h3>Kilogram to Gram</h3>
+      					<label style="margin-top: 30px">Kilogram</label>
+  						  <input id="inputkgg" type="number" placeholder="Kilogram" oninput="kggConverter(this.value)" onchange="kggConverter(this.value)">
+						    <p>Grams: <span id="outputgrams"></span></p>
+     				  </section>
+
+     					<section id="gtk" class="cnvt">
+      					<h3>Gram to Kilogram</h3>
+      					<label style="margin-top: 30px">Grams</label>
+  						  <input id="inputgram" type="number" placeholder="Grams" oninput="gkConverter(this.value)" onchange="gkConverter(this.value)">
+						    <p>Kilograms: <span id="outputkg"></span></p>
+     					</section>
+
+     					<section id="ktp" class="cnvt">
+      					<h3>Kilogram to Pound</h3>
+      					<label style="margin-top: 30px">Kilogram</label>
+  						  <input id="inputkgp" type="number" placeholder="Kilogram" oninput="kgpConverter(this.value)" onchange="kgpConverter(this.value)">
+						    <p>Pounds: <span id="outputpounds"></span></p>
+     					</section>
+     					
+     					<section id="ptk" class="cnvt">
+      					<h3>Pound to Kilogram</h3>
+      					<label style="margin-top: 30px">Pounds</label>
+  						  <input id="inputpounds" type="number" placeholder="Pounds" oninput="pkgConverter(this.value)" onchange="pkgConverter(this.value)">
+						    <p>Kilograms: <span id="outputkgp"></span></p>
+     					</section>
+     					<button id="bktw" style="background-color: red; border-color: white; color: white;">Back</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  <h5 id="Contact"></h5>   <!------ for motion when i am click to move on Contact portion----------------->
+
+     <footer>
+        <div class="container">
+            <h2 style="color: white;">Contact us</h2><br>
+            
+				<div class="row">
+            		<div class="col-s1">
+                 		<img src="Images/instagram.png" alt="Email Logo"><a href="https://www.instagram.com/noumanarain53/?hl=en" title="Nouman Instagram Profile">Instagram</a>
+            		</div>
+   					<div class="col-s1">
+  						    <img src="Images/facebook.png" alt="Facebook Logo" ><a href="https://web.facebook.com/nouman.arain.524" title="Nouman Facebook Profile">Facebook</a>
+  					  </div> 
+
+   					  <div class="col-s1">
+    						<img src="Images/whatsapp.png" alt="whatsapp Logo" title="whatsapp Number"><a href="#Contact" title="whatsapp Number">+923133493416</a>
+   					  </div>
+
+   					  <div class="col-s1">
+   					  		<img src="Images/gmail.png" alt="Gmail logo" title="Gmail"><a href="https://mail.google.com/ " title="Gmail user name">Noumanarain0</a>
+   					  </div>
+
+    				  <div class="col-s1">
+     						 <img src="Images/linkedin.png" alt="Email Logo"><a href="https://www.linkedin.com/in/muhammad-nouman-arain-b448b81a3/" title="Nouman Linkedin Profile">Linkedin</a>
+    				  </div>
+    			</div>
+
+                <hr color="white"> <!------ for Horizontal Line----------------->
+            
+            	<h5 class="lin">©2020|All Rights Reserved By STW Calculator | Developed & Maintained by Nouman</h5>
+        </div>
+    </footer>
+</div>
+        
+        <script type="text/javascript">
+        	  var calcuv=document.getElementById('calcu');   // Access to convertor portion 
+            var convev=document.getElementById('conve');   // Access to convertor portion
+            var cnmenuv=document.getElementById('cnmenu'); // Access to convertor menu
+            var camenuv=document.getElementById('camenu'); // Access to calculator menu
+            var ctv=document.getElementById('ct');       // Access to temperature Portion
+            var cwv=document.getElementById('cw');	     // Access to weight Portion
+            var simpv=document.getElementById('simp');	 // Access to simple calculator Portion
+            var aorv=document.getElementById('aor');     // Access to Area of Rectangular Portion
+            var aosv=document.getElementById('aos');	 // Access to Area of Square Portion
+            var aocv=document.getElementById('aoc');	 // Access to Area of Circle Portion
+
+            var ftcv=document.getElementById('ftc');   	 // Access to Faherenheit to Celcius portion
+            var ctfv=document.getElementById('ctf');	 // Access to Celcius to Faherenheit Portion
+            var ftkv=document.getElementById('ftk');	 // Access to Faherenheit to Kelvin Portion
+            var ktfv=document.getElementById('ktf');   	 // Access to Kelvin to Faherenheit Portion
+            var ctkv=document.getElementById('ctk');	 // Access to Celcius to Kelvin Portion
+            var ktcv=document.getElementById('ktc');	 // Access to Kelvin to Celcius Portion
+            var ktgv=document.getElementById('ktg');   	 // Access to Kilogram to Gram Portion
+            var gtkv=document.getElementById('gtk');	 // Access to Gram to Kilogram Portion
+            var ktpv=document.getElementById('ktp');	 // Access to Kilogram to Pound Portion
+            var ptkv=document.getElementById('ptk');     // Access to Pound to Kilogram Portion
+
+            document.getElementById('cabk').style.display="none"; // initially Bk Butn to Cal menu display none
+            document.getElementById('bktt').style.display="none"; // initially Bk Butn to Temp menu display none
+            document.getElementById('bktw').style.display="none"; // initially Bk Butn to Weight menu display none
+            simpv.style.display="none";			// initially convertor menu display none
+            aorv.style.display="none";			// initially Area of Rectangular display none
+            aosv.style.display="none";			// initially Area of Square display none
+            aocv.style.display="none";			// initially Area of Circle display none
+            cnmenuv.style.display="none";		// initially convertor menu display none
+            camenuv.style.display="none";		// initially calculator menu display none
+            ctv.style.display="none";			// initially temperature portion display none
+            cwv.style.display="none";			// initially weight portion display none
+
+            ftcv.style.display="none";		// initially Faherenheit to Celcius portion display none
+            ctfv.style.display="none";		// initially Celcius to Faherenheit Portion display none
+            ftkv.style.display="none";		// initially Faherenheit to Kelvin Portion display none
+            ktfv.style.display="none";		// initially Kelvin to Faherenheit Portion display none
+            ctkv.style.display="none";		// initially Celcius to Kelvin Portion display none
+            ktcv.style.display="none";		// initially Kelvin to Celcius display none
+            ktgv.style.display="none";		// initially Kilogram to Gram display none
+            gtkv.style.display="none";		// initially Gram to Kilogram portion display none
+ 			      ktpv.style.display="none";		// initially Kilogram to Pound portion display none
+ 			      ptkv.style.display="none";		// initially Pound to Kilogram Portion display none
+
+
+            var calc = calcuv.classList;
+            var conc = convev.classList;
+
+            function calcuf() { 		//Function go to calculator menu
+            	camenuv.style.display="block";
+            	convev.style.display="none";
+              document.getElementById('cabtn').classList.add("cacn");
+            	calc.add("col-md-12");
+            	calc.remove("col-md-6");
+            }
+
+            function convef() {				//Function go to convertor menu
+            	calcu.style.display="none";
+            	cnmenuv.style.display="block";
+              document.getElementById('cobtn').classList.add("cacn");
+            	conc.add("col-md-12");
+            	conc.remove("col-md-6");
+            }
+            function backf(){            	//Function Back to main
+            	conc.add("col-md-6");
+            	conc.remove("col-md-12");
+            	calc.add("col-md-6");
+            	calc.remove("col-md-12");
+              document.getElementById('cobtn').classList.remove("cacn");
+              document.getElementById('cabtn').classList.remove("cacn");
+            	calcu.style.display="block";
+            	convev.style.display="block";
+            	cnmenuv.style.display="none";
+            	camenuv.style.display="none";
+            	simpv.style.display="none";
+            	aorv.style.display="none";
+            	aosv.style.display="none";
+            	aocv.style.display="none";
+            }
+           
+            function ctf(){			//Function go to temperature menu
+            	cnmenuv.style.display="none";
+            	cwv.style.display="none";
+            	ctv.style.display="block";
+            	document.getElementById("cobtn").style.display="none";
+            }
+
+            function cwf(){							//Function go to weight menu
+            	cnmenuv.style.display="none";
+            	ctv.style.display="none";
+            	cwv.style.display="block";
+            	document.getElementById("cobtn").style.display="none";
+            }
+
+            function backcf(){						//Function Back to convertor menu
+            	ctv.style.display="none";
+            	cwv.style.display="none";
+            	cnmenuv.style.display="block";
+            	document.getElementById("cobtn").style.display="block";
+            }
+             function simpf(){						//Function go to simple caculator
+            	simpv.style.display="block";
+            	camenuv.style.display="none";
+            	document.getElementById('cabtn').style.display="none";
+            	document.getElementById('cabk').style.display="block";
+            }
+            function aorf(){						//Function go to Area of Rectangle
+            	aorv.style.display="block";
+            	camenuv.style.display="none";
+            	document.getElementById('cabtn').style.display="none";
+            	document.getElementById('cabk').style.display="block";
+            }
+            function aosf(){						//Function go to Area of Square
+            	aosv.style.display="block";
+            	camenuv.style.display="none";
+            	document.getElementById('cabtn').style.display="none";
+            	document.getElementById('cabk').style.display="block";
+            }
+            function aocf(){						//Function go to Area of Circle
+            	aocv.style.display="block";
+            	camenuv.style.display="none";
+            	document.getElementById('cabtn').style.display="none";
+            	document.getElementById('cabk').style.display="block";
+            }
+            function backcc(){						//Function back to calculator menu
+            	simpv.style.display="none";
+            	aorv.style.display="none";
+            	aosv.style.display="none";
+            	aocv.style.display="none";
+            	camenuv.style.display="block";
+            	document.getElementById('cabtn').style.display="block";
+            	document.getElementById('cabk').style.display="none";
+            	document.getElementById('stext').value="";  // when back to menu then sim.cal val empty
+            	document.getElementById('inputlr').value="";  // when back to menu then sim.cal val empty
+            	document.getElementById('inputlw').value="";  // when back to menu then Area of rect val empty
+            	document.getElementById('inputcr').value="";  // when back to menu then Area of Square val empty
+            	document.getElementById('inputss').value="";  // when back to menu then Area of Circle val empty
+
+            	document.getElementById('outputrarea').innerHTML="";  // when back to menu then Area of rect val empty
+            	document.getElementById('outputsarea').innerHTML="";  // when back to menu then Area of Square val empty
+            	document.getElementById('outputcarea').innerHTML="";  // when back to menu then Area of Circle val empty
+            }
+
+            function ftcf(){						//Function go to Faherenheit to Celcius Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="block";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="block";
+            }
+            function ctff(){						//Function go to Celcius to Faherenheit Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="none";
+           		ctfv.style.display="block";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="block";
+            }
+
+            function ftkf(){						//Function go to Faherenheit to Kelvin Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="none";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="block";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="block";
+            }
+
+            function ktff(){						//Function go to Kelvin to Faherenheit Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="none";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="block";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="block";
+            }
+
+            function ctkf(){						//Function go to Celcius to Kelvin Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="none";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="block";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="block";
+            }
+             function ktcf(){						//Function go to Kelvin to Celcius Portion
+            	ctv.style.display="none";
+            	ftcv.style.display="none";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="block";
+            	document.getElementById('bktt').style.display="block";
+            }
+             function bkttf(){						//Function Back Temperatue Menu
+            	ctv.style.display="block";		
+            	ftcv.style.display="none";
+           		ctfv.style.display="none";		
+            	ftkv.style.display="none";		
+            	ktfv.style.display="none";		
+            	ctkv.style.display="none";		
+            	ktcv.style.display="none";
+            	document.getElementById('bktt').style.display="none";
+
+            	document.getElementById("outputcel").innerHTML="";
+            	document.getElementById("outputfah").innerHTML="";
+            	document.getElementById("outputkel").innerHTML="";
+            	document.getElementById("outputkfah").innerHTML="";
+            	document.getElementById("outputckel").innerHTML="";
+            	document.getElementById("outputkcel").innerHTML="";
+
+            	document.getElementById("inputfahcel").value="";
+            	document.getElementById("inputcelfah").value="";
+            	document.getElementById("inputfahkel").value="";
+            	document.getElementById("inputkelfah").value="";
+            	document.getElementById("inputcelkel").value="";
+            	document.getElementById("inputkelcel").value="";
+            }
+
+            function ktgf(){						//Function go to Kilogram to gram Portion
+            	cwv.style.display="none";
+            	ktgv.style.display="block";
+           		gtkv.style.display="none";		
+            	ktpv.style.display="none";				
+            	ptkv.style.display="none";
+            	document.getElementById('bktw').style.display="block";
+            }
+
+            function gtkf(){						//Function go to gram to kilogram Portion
+            	cwv.style.display="none";
+            	ktgv.style.display="none";
+           		gtkv.style.display="block";		
+            	ktpv.style.display="none";				
+            	ptkv.style.display="none";
+            	document.getElementById('bktw').style.display="block";
+            }
+
+            function ktpf(){						//Function go to kiogram to pound Portion
+            	cwv.style.display="none";
+            	ktgv.style.display="none";
+           		gtkv.style.display="none";		
+            	ktpv.style.display="block";				
+            	ptkv.style.display="none";
+            	document.getElementById('bktw').style.display="block";
+            }
+
+            function ptkf(){						//Function go to pound to kilogram Portion
+            	cwv.style.display="none";
+            	ktgv.style.display="none";
+           		gtkv.style.display="none";		
+            	ktpv.style.display="none";				
+            	ptkv.style.display="block";
+            	document.getElementById('bktw').style.display="block";
+            }
+
+            function bktwf(){						//Function Back weight Menu
+            	cwv.style.display="block";
+            	ktgv.style.display="none";
+           		gtkv.style.display="none";		
+            	ktpv.style.display="none";				
+            	ptkv.style.display="none";
+            	document.getElementById('bktw').style.display="none";
+            	//when press back button all input & output values equal to null
+            	document.getElementById("outputgrams").innerHTML="";
+            	document.getElementById("outputkg").innerHTML="";
+            	document.getElementById("outputpounds").innerHTML="";
+            	document.getElementById("outputkgp").innerHTML="";
+            	document.getElementById("inputkgg").value="";
+            	document.getElementById("inputgram").value="";
+            	document.getElementById("inputkgp").value="";
+            	document.getElementById("inputpounds").value="";
+            }
+
+            document.getElementById('c1').addEventListener("click",ctf);      //Access button temperatue
+            document.getElementById('c2').addEventListener("click",cwf);  	  //Access button weight
+            document.getElementById('ctbk').addEventListener("click",backcf); //button Back to temperatue
+            document.getElementById('cwbk').addEventListener("click",backcf); //button Back to weight
+
+            document.getElementById('cabtn').addEventListener("click",calcuf);  //button calculator
+            document.getElementById('cobtn').addEventListener("click",convef);  //button converter 
+            document.getElementById('bkCabtn').addEventListener("click",backf); //button Back to Calculator
+            document.getElementById('bkCnbtn').addEventListener("click",backf); //button Back to Convertor
+
+            document.getElementById('ca1').addEventListener("click",simpf);   //Access button Simple Calculator
+            document.getElementById('ca2').addEventListener("click",aorf);    //Access button Area of Rectangle
+            document.getElementById('ca3').addEventListener("click",aosf); 	  //Access button Area of Square
+            document.getElementById('ca4').addEventListener("click",aocf); 	  //Acess button Area of Circle
+            document.getElementById('cabk').addEventListener("click",backcc); //button Back to calculator menu
+
+            document.getElementById('t1').addEventListener("click",ftcf);  // Access to Faherenheit to Celcius button
+            document.getElementById('t2').addEventListener("click",ctff);  	// Access to Celcius to Faherenheit button
+            document.getElementById('t3').addEventListener("click",ftkf); 	// Access to Faherenheit to Kelvin button
+            document.getElementById('t4').addEventListener("click",ktff);	// Access to Kelvin to Faherenheit button
+            document.getElementById('t5').addEventListener("click",ctkf); // Access to Celcius to Kelvin button
+            document.getElementById('t6').addEventListener("click",ktcf);  // Access to Kelvin to Celcius button
+            
+            document.getElementById('w1').addEventListener("click",ktgf);   // Access to Kilogram to Gram button
+            document.getElementById('w2').addEventListener("click",gtkf);   // Access to Gram to Kilogram button
+            document.getElementById('w3').addEventListener("click",ktpf);   // Access to Kilogram to Pound button
+            document.getElementById('w4').addEventListener("click",ptkf); // Access to Pound to Kilogram button
+
+            document.getElementById('bktt').addEventListener("click",bkttf); // Back button to temp menu button
+            document.getElementById('bktw').addEventListener("click",bktwf); // Back button to Weight menu button
+
+            function kggConverter(valNum) {
+ 				document.getElementById("outputgrams").innerHTML=valNum*1000 +" g";
+			}
+
+			function gkConverter(valNum) {
+ 				document.getElementById("outputkg").innerHTML=valNum/1000 +" kg"; 
+			}
+
+			function kgpConverter(valNum) {
+ 				document.getElementById("outputpounds").innerHTML=valNum*2.2046226218 +" lbs";
+			}
+
+			function pkgConverter(valNum) {
+ 				document.getElementById("outputkgp").innerHTML=valNum/2.2046226218 +" kg";
+			}
+//---------------------------------
+			function fcConverter(valNum) {
+ 				document.getElementById("outputcel").innerHTML=(valNum-32)*(5/9) +" &#8451";
+			}
+
+			function cfahConverter(valNum) {
+ 				document.getElementById("outputfah").innerHTML=(valNum *(9/5))+32 +" &#8457";
+			}
+
+			function fahkelConverter(valNum) {
+ 				document.getElementById("outputkel").innerHTML=((5/9)*(valNum-32))+273 +" &#8490";
+			}
+
+			function kelfahConverter(valNum) {
+ 				document.getElementById("outputkfah").innerHTML=((valNum-273.15)*1.8)+32 + " &#8457";
+			}
+
+			function celkelConverter(valNum) {
+ 				document.getElementById("outputckel").innerHTML=(valNum-273.15+273.15)+273.15  +" &#8490";
+			}
+
+			function kelcelConverter(valNum) {
+ 				document.getElementById("outputkcel").innerHTML=valNum-273.15 +" &#8451";
+			}
+//-----------------------
+			function aorConverter(valNum) {
+				var rg=document.getElementById("inputlr").value;
+ 				document.getElementById("outputrarea").innerHTML=valNum*rg;
+			}
+			function aosConverter(valNum) {
+ 				document.getElementById("outputsarea").innerHTML=valNum*valNum;
+			}
+			function aocConverter(valNum) {
+ 				document.getElementById("outputcarea").innerHTML=valNum*valNum*3.14 ;
+			}
+        </script>
+    </body>
+</html>
