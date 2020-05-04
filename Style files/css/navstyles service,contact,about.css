@@ -24,12 +24,6 @@ nav,footer{
 	width: 100%;
 	color: white;
 }
-.logo{
-  margin-top: 1%;
-	float: left;
-	padding-left: 5%;
-	width: 40%;
-}
 .menu ul{
 	display: flex;
 	justify-content:space-around;
@@ -40,7 +34,10 @@ nav,footer{
 	color: white;
 	padding: 0% 7px;
 }
-
+.contact:hover{
+        background-color: transparent !important;
+        color: white!important;
+    }
 .menu ul a:hover{
 	background-color: white;
 	color: black;
@@ -109,10 +106,19 @@ nav{
 .logo h2{
 	font-size: 2vw;
 }
+.logo1{
+    display: none;
+  }
+.logo{
+  margin-top: 1%;
+  float: left;
+  padding-left: 5%;
+  width: 40%;
+}
 footer h5{
     font-size: 1.5vw;
 }
- .lin{			/* class for copyright lines*/
+.lin{			/* class for copyright lines*/
     color:white;
     text-align: center;
     padding: 10px;
@@ -120,16 +126,49 @@ footer h5{
   }
 }
 
+@media screen and (max-width: 550px){
+  nav{
+  height: 29px;
+  }
+  .menu ul a {
+  font-size: 17px;
+  }
+  .logo1 h2{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  }
+  .logo{
+    display: none;
+  }
+  .logo1{
+  width: 140px;
+  margin: 1% auto;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 771px){
+  nav{
+  height: 5vw;
+  }
+  .menu ul a {
+  font-size: 3vw;
+  }
+  .logo h2{
+  font-size: 3vw;
+  }
+  .logo{
+  margin-top: 1%;
+  float: left;
+  padding-left: 5%;
+  width: 40%;
+  }
+  .logo1{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 771px){
-nav{
-	height: 5vw;
-}
-.menu ul a {
-	font-size: 3vw;
-}
-.logo h2{
-	font-size: 3vw;
-}
 footer h5{
 	font-size: 2.5vw;
 }
